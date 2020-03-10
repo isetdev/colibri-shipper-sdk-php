@@ -1,0 +1,31 @@
+{
+    "name": "apimatic/freteasy",
+    "type": "library",
+    "description": "TODO: add library description",
+    "keywords": ["Freteasy","API","SDK"],
+    "homepage": "https://apimatic.io",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tarcisio Quaresma",
+            "email": "tarcisio@iset.com.br",
+            "homepage": "https://apimatic.io"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "mashape/unirest-php": "~3.0.1",
+        "apimatic/jsonmapper": "~1.3.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^2.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "FreteasyLib\\": "src/"
+        }
+    }
+}
