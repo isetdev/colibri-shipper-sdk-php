@@ -148,26 +148,26 @@ $address = $client->getAddress();
 
 ```php
 function getByPostcode(
-        $postcode,
-        $country)
+        $country,
+        $postcode)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| postcode |  ``` Required ```  | TODO: Add a parameter description |
-| country |  ``` Required ```  | TODO: Add a parameter description |
+| country |  ``` Required ```  | country abbreviation to search address |
+| postcode |  ``` Required ```  | postcode number |
 
 
 
 #### Example Usage
 
 ```php
-$postcode = 'postcode';
 $country = 'country';
+$postcode = 'postcode';
 
-$result = $address->getByPostcode($postcode, $country);
+$result = $address->getByPostcode($country, $postcode);
 
 ```
 
@@ -208,14 +208,23 @@ $result = $quote->getQuote();
 
 
 ```php
-function createQuote()
+function createQuote($quote)
 ```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| quote |  ``` Required ```  | quote input to calculate freight |
+
+
 
 #### Example Usage
 
 ```php
+$quote = new Quote();
 
-$result = $quote->createQuote();
+$result = $quote->createQuote($quote);
 
 ```
 
