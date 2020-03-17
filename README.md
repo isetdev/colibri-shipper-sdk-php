@@ -143,7 +143,7 @@ $address = $client->getAddress();
 
 ### <a name="get_by_postcode"></a>![Method: ](https://apidocs.io/img/method.png ".AddressController.getByPostcode") getByPostcode
 
-> TODO: Add a method description
+> Endpoint to get address by country and postcode
 
 
 ```php
@@ -164,8 +164,8 @@ function getByPostcode(
 #### Example Usage
 
 ```php
-$country = 'country';
-$postcode = 'postcode';
+$country = 'BR';
+$postcode = '31275060';
 
 $result = $address->getByPostcode($country, $postcode);
 
@@ -186,7 +186,7 @@ $quote = $client->getQuote();
 
 ### <a name="get_quote"></a>![Method: ](https://apidocs.io/img/method.png ".QuoteController.getQuote") getQuote
 
-> TODO: Add a method description
+> Endpoint to verify if all services still working fine
 
 
 ```php
@@ -204,7 +204,7 @@ $result = $quote->getQuote();
 
 ### <a name="create_quote"></a>![Method: ](https://apidocs.io/img/method.png ".QuoteController.createQuote") createQuote
 
-> TODO: Add a method description
+> Endpoint to get quotation freight according to sender, destiny and items for each service
 
 
 ```php

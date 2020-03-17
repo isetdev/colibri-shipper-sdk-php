@@ -16,7 +16,8 @@ class Item implements JsonSerializable
 {
     /**
      * item identification
-     * @var string|null $sku public property
+     * @required
+     * @var string $sku public property
      */
     public $sku;
 
@@ -30,7 +31,7 @@ class Item implements JsonSerializable
     /**
      * dimensions of item
      * @required
-     * @var array $dimensions public property
+     * @var \FreteasyLib\Models\Dimensions $dimensions public property
      */
     public $dimensions;
 
@@ -51,26 +52,20 @@ class Item implements JsonSerializable
 
     /**
      * Constructor to set initial or default values of member properties
-     * @param string  $sku           Initialization value for $this->sku
-     * @param integer $quantity      Initialization value for $this->quantity
-     * @param array   $dimensions    Initialization value for $this->dimensions
-     * @param double  $weight        Initialization value for $this->weight
-     * @param double  $declaredValue Initialization value for $this->declaredValue
+     * @param string     $sku           Initialization value for $this->sku
+     * @param integer    $quantity      Initialization value for $this->quantity
+     * @param Dimensions $dimensions    Initialization value for $this->dimensions
+     * @param double     $weight        Initialization value for $this->weight
+     * @param double     $declaredValue Initialization value for $this->declaredValue
      */
     public function __construct()
     {
-        switch (func_num_args()) {
-            case 5:
-                $this->sku           = func_get_arg(0);
-                $this->quantity      = func_get_arg(1);
-                $this->dimensions    = func_get_arg(2);
-                $this->weight        = func_get_arg(3);
-                $this->declaredValue = func_get_arg(4);
-                break;
-
-            default:
-                $this->quantity = 1;
-                break;
+        if (5 == func_num_args()) {
+            $this->sku           = func_get_arg(0);
+            $this->quantity      = func_get_arg(1);
+            $this->dimensions    = func_get_arg(2);
+            $this->weight        = func_get_arg(3);
+            $this->declaredValue = func_get_arg(4);
         }
     }
 

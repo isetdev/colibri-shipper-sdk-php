@@ -24,14 +24,14 @@ class Quote implements JsonSerializable
     /**
      * order sender
      * @required
-     * @var array $sender public property
+     * @var \FreteasyLib\Models\Sender $sender public property
      */
     public $sender;
 
     /**
      * order destiny
      * @required
-     * @var array $destiny public property
+     * @var \FreteasyLib\Models\Destiny $destiny public property
      */
     public $destiny;
 
@@ -44,10 +44,10 @@ class Quote implements JsonSerializable
 
     /**
      * Constructor to set initial or default values of member properties
-     * @param array $services Initialization value for $this->services
-     * @param array $sender   Initialization value for $this->sender
-     * @param array $destiny  Initialization value for $this->destiny
-     * @param array $items    Initialization value for $this->items
+     * @param array   $services Initialization value for $this->services
+     * @param Sender  $sender   Initialization value for $this->sender
+     * @param Destiny $destiny  Initialization value for $this->destiny
+     * @param array   $items    Initialization value for $this->items
      */
     public function __construct()
     {

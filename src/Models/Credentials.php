@@ -34,31 +34,31 @@ class Credentials implements JsonSerializable
 
     /**
      * company_code to access and identification the request in service endpoint
+     * @var string|null $token public property
+     */
+    public $token;
+
+    /**
+     * token to authenticate in service endpoint
      * @maps company_code
      * @var string|null $companyCode public property
      */
     public $companyCode;
 
     /**
-     * token to authenticate in service endpoint
-     * @var string|null $token public property
-     */
-    public $token;
-
-    /**
      * document info
-     * @var array|null $doc public property
+     * @var \FreteasyLib\Models\Document|null $doc public property
      */
     public $doc;
 
     /**
      * Constructor to set initial or default values of member properties
-     * @param string $login       Initialization value for $this->login
-     * @param string $password    Initialization value for $this->password
-     * @param string $code        Initialization value for $this->code
-     * @param string $companyCode Initialization value for $this->companyCode
-     * @param string $token       Initialization value for $this->token
-     * @param array  $doc         Initialization value for $this->doc
+     * @param string   $login       Initialization value for $this->login
+     * @param string   $password    Initialization value for $this->password
+     * @param string   $code        Initialization value for $this->code
+     * @param string   $token       Initialization value for $this->token
+     * @param string   $companyCode Initialization value for $this->companyCode
+     * @param Document $doc         Initialization value for $this->doc
      */
     public function __construct()
     {
@@ -66,8 +66,8 @@ class Credentials implements JsonSerializable
             $this->login       = func_get_arg(0);
             $this->password    = func_get_arg(1);
             $this->code        = func_get_arg(2);
-            $this->companyCode = func_get_arg(3);
-            $this->token       = func_get_arg(4);
+            $this->token       = func_get_arg(3);
+            $this->companyCode = func_get_arg(4);
             $this->doc         = func_get_arg(5);
         }
     }
@@ -82,8 +82,8 @@ class Credentials implements JsonSerializable
         $json['login']        = $this->login;
         $json['password']     = $this->password;
         $json['code']         = $this->code;
-        $json['company_code'] = $this->companyCode;
         $json['token']        = $this->token;
+        $json['company_code'] = $this->companyCode;
         $json['doc']          = $this->doc;
 
         return $json;

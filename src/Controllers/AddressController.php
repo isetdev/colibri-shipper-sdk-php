@@ -43,11 +43,11 @@ class AddressController extends BaseController
     }
 
     /**
-     * @todo Add general description for this endpoint
+     * Endpoint to get address by country and postcode
      *
      * @param string $country  country abbreviation to search address
      * @param string $postcode postcode number
-     * @return object response from the API call
+     * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
     public function getByPostcode(
@@ -70,6 +70,7 @@ class AddressController extends BaseController
         //prepare headers
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
+            'Accept'        => 'application/json',
             'x-api-key' => Configuration::$xApiKey
         );
 

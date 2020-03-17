@@ -10,10 +10,17 @@ namespace FreteasyLib\Models;
 use JsonSerializable;
 
 /**
- *Order destination
+ *Order destination info
  */
 class Destiny implements JsonSerializable
 {
+    /**
+     * customer address
+     * @required
+     * @var \FreteasyLib\Models\Address $address public property
+     */
+    public $address;
+
     /**
      * customer name
      * @var string|null $name public property
@@ -21,22 +28,15 @@ class Destiny implements JsonSerializable
     public $name;
 
     /**
-     * customer address
-     * @required
-     * @var array $address public property
-     */
-    public $address;
-
-    /**
      * Constructor to set initial or default values of member properties
-     * @param string $name    Initialization value for $this->name
-     * @param array  $address Initialization value for $this->address
+     * @param Address $address Initialization value for $this->address
+     * @param string  $name    Initialization value for $this->name
      */
     public function __construct()
     {
         if (2 == func_num_args()) {
-            $this->name    = func_get_arg(0);
-            $this->address = func_get_arg(1);
+            $this->address = func_get_arg(0);
+            $this->name    = func_get_arg(1);
         }
     }
 
@@ -47,8 +47,8 @@ class Destiny implements JsonSerializable
     public function jsonSerialize()
     {
         $json = array();
-        $json['name']    = $this->name;
         $json['address'] = $this->address;
+        $json['name']    = $this->name;
 
         return $json;
     }

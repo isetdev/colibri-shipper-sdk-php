@@ -36,43 +36,43 @@ class Address implements JsonSerializable
     public $streetLine2;
 
     /**
-     * number of place
+     * place number
      * @var string|null $number public property
      */
     public $number;
 
     /**
-     * suburb of place
+     * place suburb
      * @var string|null $suburb public property
      */
     public $suburb;
 
     /**
-     * city of place
+     * address city
      * @var string|null $city public property
      */
     public $city;
 
     /**
-     * state of place
+     * address state
      * @var string|null $state public property
      */
     public $state;
 
     /**
-     * country of place
+     * address country
      * @var string|null $country public property
      */
     public $country;
 
     /**
-     * neighborhood of place
+     * place neighborhood
      * @var string|null $neighborhood public property
      */
     public $neighborhood;
 
     /**
-     * country of place
+     * place county
      * @var string|null $county public property
      */
     public $county;

@@ -16,13 +16,14 @@ class Dispatcher implements JsonSerializable
 {
     /**
      * dispatcher info
-     * @var array|null $doc public property
+     * @required
+     * @var \FreteasyLib\Models\Document $doc public property
      */
     public $doc;
 
     /**
      * Constructor to set initial or default values of member properties
-     * @param array $doc Initialization value for $this->doc
+     * @param Document $doc Initialization value for $this->doc
      */
     public function __construct()
     {

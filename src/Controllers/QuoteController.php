@@ -43,9 +43,9 @@ class QuoteController extends BaseController
     }
 
     /**
-     * @todo Add general description for this endpoint
+     * Endpoint to verify if all services still working fine
      *
-     * @return object response from the API call
+     * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
     public function getQuote()
@@ -60,6 +60,7 @@ class QuoteController extends BaseController
         //prepare headers
         $_headers = array (
             'user-agent'    => BaseController::USER_AGENT,
+            'Accept'        => 'application/json',
             'x-api-key' => Configuration::$xApiKey
         );
 
@@ -87,7 +88,7 @@ class QuoteController extends BaseController
     }
 
     /**
-     * @todo Add general description for this endpoint
+     * Endpoint to get quotation freight according to sender, destiny and items for each service
      *
      * @param Models\Quote $quote quote input to calculate freight
      * @return mixed response from the API call

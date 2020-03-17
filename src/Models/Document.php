@@ -15,14 +15,16 @@ use JsonSerializable;
 class Document implements JsonSerializable
 {
     /**
-     * @todo Write general description for this property
-     * @var string|null $type public property
+     * document type
+     * @required
+     * @var string $type public property
      */
     public $type;
 
     /**
-     * @todo Write general description for this property
-     * @var string|null $number public property
+     * document number
+     * @required
+     * @var string $number public property
      */
     public $number;
 
@@ -33,15 +35,9 @@ class Document implements JsonSerializable
      */
     public function __construct()
     {
-        switch (func_num_args()) {
-            case 2:
-                $this->type   = func_get_arg(0);
-                $this->number = func_get_arg(1);
-                break;
-
-            default:
-                $this->type = 'cnpj';
-                break;
+        if (2 == func_num_args()) {
+            $this->type   = func_get_arg(0);
+            $this->number = func_get_arg(1);
         }
     }
 
