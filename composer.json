@@ -3,13 +3,13 @@
     "type": "library",
     "description": "TODO: add library description",
     "keywords": ["Freteasy","API","SDK"],
-    "homepage": "https://apimatic.io",
+    "homepage": "https://www.freteasy.com.br",
     "license": "MIT",
     "authors": [
         {
             "name": "Tarcisio Quaresma",
             "email": "tarcisio@iset.com.br",
-            "homepage": "https://apimatic.io"
+            "homepage": "https://www.freteasy.com.br"
         }
     ],
     "require": {
