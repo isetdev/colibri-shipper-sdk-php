@@ -1,5 +1,7 @@
 # Getting started
 
+This is the official PHP SDK for Integration with FretEasy API. https://www.freteasy.com.br
+
 ## How to Build
 
 The generated code has dependencies over external libraries like UniRest. These dependencies are defined in the ```composer.json``` file that comes with the SDK. 
