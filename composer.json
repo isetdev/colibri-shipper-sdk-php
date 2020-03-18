@@ -1,7 +1,7 @@
 {
     "name": "isetdev/colibri-shipper-sdk-php",
     "type": "library",
-    "description": "TODO: add library description",
+    "description": "This is the official PHP SDK for Integration with FretEasy API. https://www.freteasy.com.br",
     "version": "1.0.0",
     "keywords": ["Freteasy","API","SDK"],
     "homepage": "https://www.freteasy.com.br",

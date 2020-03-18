@@ -62,6 +62,9 @@ class BaseController
 
     protected function validateResponse(HttpResponse $response, HttpContext $_httpContext)
     {
+        if ($response->getStatusCode() == 404) {
+            throw new APIException('Address not found', $_httpContext);
+        }
         if (($response->getStatusCode() < 200) || ($response->getStatusCode() > 208)) { //[200,208] = HTTP OK
             throw new APIException('HTTP Response Not OK', $_httpContext);
         }
