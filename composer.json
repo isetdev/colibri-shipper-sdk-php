@@ -2,6 +2,7 @@
     "name": "isetdev/colibri-shipper-sdk-php",
     "type": "library",
     "description": "TODO: add library description",
+    "version": "1.0.0",
     "keywords": ["Freteasy","API","SDK"],
     "homepage": "https://www.freteasy.com.br",
     "license": "MIT",
