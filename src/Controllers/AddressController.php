@@ -45,14 +45,14 @@ class AddressController extends BaseController
     /**
      * Endpoint to get address by country and postcode
      *
-     * @param string $country  country abbreviation to search address
-     * @param string $postcode postcode number
+     * @param  array  $options    Array with all options for search
+     * @param string $options['country']  country abbreviation to search address
+     * @param string $options['postcode'] postcode number
      * @return mixed response from the API call
      * @throws APIException Thrown if API call fails
      */
     public function getByPostcode(
-        $country,
-        $postcode
+        $options
     ) {
 
         //prepare query string for API call
@@ -60,8 +60,8 @@ class AddressController extends BaseController
 
         //process optional query parameters
         $_queryBuilder = APIHelper::appendUrlWithTemplateParameters($_queryBuilder, array (
-            'country'  => $country,
-            'postcode' => $postcode,
+            'country'  => $this->val($options, 'country'),
+            'postcode' => $this->val($options, 'postcode'),
             ));
 
         //validate and preprocess url
@@ -95,5 +95,21 @@ class AddressController extends BaseController
         $this->validateResponse($_httpResponse, $_httpContext);
 
         return $response->body;
+    }
+
+
+    /**
+    * Array access utility method
+     * @param  array          $arr         Array of values to read from
+     * @param  string         $key         Key to get the value from the array
+     * @param  mixed|null     $default     Default value to use if the key was not found
+     * @return mixed
+     */
+    private function val($arr, $key, $default = null)
+    {
+        if (isset($arr[$key])) {
+            return is_bool($arr[$key]) ? var_export($arr[$key], true) : $arr[$key];
+        }
+        return $default;
     }
 }

@@ -206,9 +206,7 @@ $address = $client->getAddress();
 
 
 ```php
-function getByPostcode(
-        $country,
-        $postcode)
+function getByPostcode($options)
 ```
 
 #### Parameters
@@ -224,9 +222,13 @@ function getByPostcode(
 
 ```php
 $country = 'BR';
-$postcode = '31275060';
+$collect['country'] = $country;
 
-$result = $address->getByPostcode($country, $postcode);
+$postcode = '31275060';
+$collect['postcode'] = $postcode;
+
+
+$result = $address->getByPostcode($collect);
 
 ```
 
