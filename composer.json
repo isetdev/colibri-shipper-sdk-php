@@ -1,8 +1,8 @@
 {
-    "name": "isetdev/colibri-shipper-sdk-php",
+    "name": "isetdev/colibri-shipper",
     "type": "library",
     "description": "This is the official PHP SDK for Integration with FretEasy API. https://www.freteasy.com.br",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "keywords": ["Freteasy","API","SDK"],
     "homepage": "https://www.freteasy.com.br",
     "license": "MIT",

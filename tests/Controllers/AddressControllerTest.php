@@ -47,14 +47,15 @@ class AddressControllerTest extends \PHPUnit_Framework_TestCase
     public function testM31275060InBR()
     {
         // Parameters for the API call
-        $country = 'BR';
-        $postcode = '31275060';
+        $input = array();
+        $input['country'] = 'BR';
+        $input['postcode'] = '31275060';
 
         // Set callback and perform API call
         $result = null;
         self::$controller->setHttpCallBack($this->httpResponse);
         try {
-            $result = self::$controller->getByPostcode($country, $postcode);
+            $result = self::$controller->getByPostcode($input);
         } catch (APIException $e) {
         }
 
@@ -83,14 +84,15 @@ class AddressControllerTest extends \PHPUnit_Framework_TestCase
     public function testInvalidCountryXX()
     {
         // Parameters for the API call
-        $country = 'XX';
-        $postcode = '31275060';
+        $input = array();
+        $input['country'] = 'XX';
+        $input['postcode'] = '31275060';
 
         // Set callback and perform API call
         $result = null;
         self::$controller->setHttpCallBack($this->httpResponse);
         try {
-            $result = self::$controller->getByPostcode($country, $postcode);
+            $result = self::$controller->getByPostcode($input);
         } catch (APIException $e) {
         }
 
@@ -117,14 +119,15 @@ class AddressControllerTest extends \PHPUnit_Framework_TestCase
     public function testInvalidPostcodeX4SD1A()
     {
         // Parameters for the API call
-        $country = 'BR';
-        $postcode = 'X/*4SD1A';
+        $input = array();
+        $input['country'] = 'BR';
+        $input['postcode'] = 'X/*4SD1A';
 
         // Set callback and perform API call
         $result = null;
         self::$controller->setHttpCallBack($this->httpResponse);
         try {
-            $result = self::$controller->getByPostcode($country, $postcode);
+            $result = self::$controller->getByPostcode($input);
         } catch (APIException $e) {
         }
 
@@ -142,14 +145,15 @@ class AddressControllerTest extends \PHPUnit_Framework_TestCase
     public function testValidCountryBRAndInvalidPostcode0UMDOIS()
     {
         // Parameters for the API call
-        $country = 'BR';
-        $postcode = '0UMDOIS';
+        $input = array();
+        $input['country'] = 'BR';
+        $input['postcode'] = '0UMDOIS';
 
         // Set callback and perform API call
         $result = null;
         self::$controller->setHttpCallBack($this->httpResponse);
         try {
-            $result = self::$controller->getByPostcode($country, $postcode);
+            $result = self::$controller->getByPostcode($input);
         } catch (APIException $e) {
         }
 
