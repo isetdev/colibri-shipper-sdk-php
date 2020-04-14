@@ -23,19 +23,19 @@ class FreteasyClient
         Configuration::$xApiKey = $xApiKey ? $xApiKey : Configuration::$xApiKey;
     }
     /**
-     * Singleton access to Address controller
-     * @return Controllers\AddressController The *Singleton* instance
-     */
-    public function getAddress()
-    {
-        return Controllers\AddressController::getInstance();
-    }
-    /**
      * Singleton access to Quote controller
      * @return Controllers\QuoteController The *Singleton* instance
      */
     public function getQuote()
     {
         return Controllers\QuoteController::getInstance();
+    }
+    /**
+     * Singleton access to Address controller
+     * @return Controllers\AddressController The *Singleton* instance
+     */
+    public function getAddress()
+    {
+        return Controllers\AddressController::getInstance();
     }
 }

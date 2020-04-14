@@ -130,51 +130,8 @@ $client = new FreteasyLib\FreteasyClient($xApiKey);
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [AddressController](#address_controller)
 * [QuoteController](#quote_controller)
-
-## <a name="address_controller"></a>![Class: ](https://apidocs.io/img/class.png ".AddressController") AddressController
-
-### Get singleton instance
-
-The singleton instance of the ``` AddressController ``` class can be accessed from the API Client.
-
-```php
-$address = $client->getAddress();
-```
-
-### <a name="get_by_postcode"></a>![Method: ](https://apidocs.io/img/method.png ".AddressController.getByPostcode") getByPostcode
-
-> Endpoint to get address by country and postcode
-
-
-```php
-function getByPostcode(
-        $country,
-        $postcode)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| country |  ``` Required ```  | country abbreviation to search address |
-| postcode |  ``` Required ```  | postcode number |
-
-
-
-#### Example Usage
-
-```php
-$country = 'BR';
-$postcode = '31275060';
-
-$result = $address->getByPostcode($country, $postcode);
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
+* [AddressController](#address_controller)
 
 ## <a name="quote_controller"></a>![Class: ](https://apidocs.io/img/class.png ".QuoteController") QuoteController
 
@@ -227,6 +184,49 @@ function createQuote($quote)
 $quote = new Quote();
 
 $result = $quote->createQuote($quote);
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="address_controller"></a>![Class: ](https://apidocs.io/img/class.png ".AddressController") AddressController
+
+### Get singleton instance
+
+The singleton instance of the ``` AddressController ``` class can be accessed from the API Client.
+
+```php
+$address = $client->getAddress();
+```
+
+### <a name="get_by_postcode"></a>![Method: ](https://apidocs.io/img/method.png ".AddressController.getByPostcode") getByPostcode
+
+> Endpoint to get address by country and postcode
+
+
+```php
+function getByPostcode(
+        $country,
+        $postcode)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| country |  ``` Required ```  | country abbreviation to search address |
+| postcode |  ``` Required ```  | postcode number |
+
+
+
+#### Example Usage
+
+```php
+$country = 'BR';
+$postcode = '31275060';
+
+$result = $address->getByPostcode($country, $postcode);
 
 ```
 
